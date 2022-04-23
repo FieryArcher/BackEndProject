@@ -1,0 +1,16 @@
+
+
+
+{% block content %}
+    <br>
+    <h1>create</h1>
+
+<form action="post">
+    {% csrf_token %}
+    {{form.title}}
+    {{form.task}}
+    <br>
+    <button type="submit" class="btn btn-success">Add</button>
+    <span>{{error}}</span>
+</form>
+{% endblock %}

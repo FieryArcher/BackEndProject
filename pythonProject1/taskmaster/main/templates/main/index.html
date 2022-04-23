@@ -1,0 +1,36 @@
+{% extends 'main/based.html' %}
+
+{% block style %}
+	.article-panel{
+		display:inline;
+	}
+{% endblock %}
+
+{% block content %}
+<ul class="list-articles">
+	{% for p in posts %}
+	<li><div class="article-panel">
+	<p class="first">Категория: {{p.cat}}</p>
+		<p class="last">Дата: {{p.time_update|date:"d-m-Y H:i:s"}}</p>
+		<p>Written BY: {{post.first_name}} - {{post.last_name}}</p>
+
+</div>
+
+				<h2>{{p.title}}</h2>
+					{% autoescape on %}
+					{{p.content|linebreaks|truncatewords:100}}
+					{% endautoescape %}
+<!--                <div class="clear"></div>-->
+				<br>
+				<small><a href="{% url 'post' p.pk %}" style="color: red;">SHOW</a></small>
+
+					{% if user.is_staff %}
+					<a href="{% url 'delete_post' p.id %}"  style="color: blue	;">Delete</a>
+					<a href="{% url 'update_post' p.id %}"  style="color: blue	;">Update</a>
+					{% endif %}
+
+<!--		<a href="{% url 'update_post' p.pk %}">EDIT</a>-->
+			</li>
+	{% endfor %}
+</ul>
+{% endblock %}

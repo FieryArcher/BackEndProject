@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}  {{ post.title_tag }} {% endblock %}
+{% block content%}
+
+<h1>Add Post</h1>
+<br><br>
+<table>
+<form action="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{{ post.get_absolute_url }}" class="btn btn-secondary"> Post </a>
+</form>
+</table>
+{% endblock %}

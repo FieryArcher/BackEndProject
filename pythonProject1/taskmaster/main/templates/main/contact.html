@@ -1,0 +1,60 @@
+{% extends 'main/based.html' %}
+
+{% block title %}
+About Us
+{% endblock %}
+
+    <style>
+        {% block style %}
+            body {
+              /*text-align: center;*/
+              margin: 10;
+              font-family: Verdana, Arial, sans-serif;
+              font-size: 16px;
+            }
+            input {
+              display: inline-block;
+              margin: 10px auto;
+              border: 2px solid #eee;
+              padding: 10px 20px;
+              font-family: Verdana, Arial, sans-serif;
+              font-size: 16px;
+            }
+            textarea {
+              display: inline-block;
+              resize: None;
+              margin: 10px auto;
+              border: 2px solid #eee;
+              padding: 10px 20px;
+              font-family: Verdana, Arial, sans-serif;
+              font-size: 16px;
+            }
+
+        {% endblock %}
+    </style>
+
+{% block content %}
+        <!-- Создаём форму и указываем её обработчик и метод -->
+    <h2>Contact</h2>
+    <p>We are happy to read your complaints and suggestions for improving our site.</p>
+                <form action="http://mihailmaximov.ru/projects/mail/post.php" method="post" name="form">
+                  <!-- Поле ввода имени -->
+                  <input name="name" type="text" placeholder="Ваше имя" />
+                  <br>
+                  <!-- Поле ввода почты  -->
+                  <input name="email" type="text" placeholder="Ваша почта" />
+                  <br>
+                  <!-- Поле ввода для темы сообщения -->
+                  <input size="30" name="header" type="text" placeholder="Тема" />
+                  <br>
+                  <!-- Текстовое поле для самого сообщения -->
+                  <textarea placeholder="Type text here" cols="32" name="message" rows="5"></textarea>
+                  <br>
+                  <!-- Кнопка с надписью «Отправить», которая запускает обработчик формы -->
+                  <input type="submit" value="Отправить" />
+                </form>
+    {% endblock %}
+
+<!---
+
+-->

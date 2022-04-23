@@ -1,0 +1,17 @@
+{% extends   'main/based.html' %}
+
+{% block title %}
+Delete of status
+{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1 class="h1">Delete post</h1>
+    <form method = "post">
+        {% csrf_token %}
+        <button class="btn btn-success " id="b1" type="submit">Delete</button>
+    </form>
+</div>
+
+{% endblock %}

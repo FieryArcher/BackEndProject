@@ -1,0 +1,54 @@
+{% extends   'main/based.html' %}
+
+{% block title %}
+Страница про create
+{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Update</h1>
+    <form method="post" >
+        {% csrf_token %}
+        <div>
+            <div class="div">
+                {{ post.title }}<br>
+                {{ post.content }}<br>
+                {{ post.cat }}<br>
+            </div>
+        </div>
+
+
+        <span>{{ error }}</span>
+        <button type="submit" class="btn btn-success">update</button>
+    </form>
+</div>
+
+
+<!--<div class="features">-->
+<!--    <h1 class="h1">Forma add</h1>-->
+<!--    <form method = "post">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.name }}<br>-->
+<!--        {{ form.full_text }}<br>-->
+<!--        {{ form.date }}<br>-->
+<!--        <span>{{ error }}</span>-->
+<!--            <button class="btn btn-success " id="b1" type="submit">Add status</button>-->
+
+<!--    </form>-->
+<!--</div>-->
+<style>
+#b1{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+form{
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+</style>
+
+{% endblock %}
